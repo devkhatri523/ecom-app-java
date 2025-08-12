@@ -28,6 +28,8 @@ public class CustomerClient {
         HttpHeaders headers = new HttpHeaders();
         headers.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
         HttpEntity<Void> entity = new HttpEntity<>(headers);
+
+
         ParameterizedTypeReference<CustomerResponse> responseType = new ParameterizedTypeReference<CustomerResponse>(){
 
         };
