@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/java-ecom-app
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.type.mapping: orderConfirmation:com.order.order.dto.OrderConfirmation
+
+
+server:
+  port:
+    9080
+
+customer:
+  service:
+    url: http://localhost:8222/api/v1/customer
+payment:
+  service:
+    url: http://localhost:8222/api/v1/payments
+purchase:
+  product:
+    url: http://localhost:8222/api/v1/products
