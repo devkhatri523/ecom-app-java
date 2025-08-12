@@ -20,6 +20,10 @@ public class CustomerClient {
     private String customerServiceUrl;
     private final RestTemplate restTemplate;
 
+
+
+
+
     public CustomerResponse getCustomerInfo(String customerId){
         HttpHeaders headers = new HttpHeaders();
         headers.set(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
